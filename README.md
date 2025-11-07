@@ -1,82 +1,111 @@
-## `px` vs `em` vs `rem`
-| Unit  | Relative To               | Responsive? | Example (if base = 16px)       |
-| ----- | ------------------------- | ----------- | ------------------------------ |
-| `px`  | Fixed pixel               | ❌ No        | 16px = 16px                    |
-| `em`  | Parent font size          | ✅ Yes       | 1.5em = 24px if parent is 16px |
-| `rem` | Root (`<html>`) font size | ✅ Yes       | 1.5rem = 24px always           |
+## List
 
-### 1. `px` — Pixels (Fixed Unit)
-- px stands for pixels, the smallest display unit on a screen.
-- It’s an absolute unit — meaning it does not scale relative to anything else.
-- 1px is roughly one dot on your screen (though high-DPI screens scale it).
-- Example:
-```css
-p {
-  font-size: 16px;
-}
-```
-This means the text is exactly 16 pixels high — no matter the parent element or screen size.
+In HTML, a list is a way to organize and display a collection of related items — such as names, steps, or options — in a
+structured format.
 
-#### ✅ Advantages
-- Consistent across browsers.
-- Predictable and precise.
+## List Tags
 
-#### ❌ Disadvantages
-- Not responsive — doesn’t scale automatically with user zoom or accessibility settings.
-
-### 2. `em` — Relative to Parent’s Font Size
-- em is a relative unit.
-- It scales based on the font size of its parent element.
-- Example: If the parent has:
-```css
-body {
-  font-size: 16px;
-}
-p {
-  font-size: 1.5em;
-}
-```
-Then 1.5em = 1.5 × 16px = 24px
-
-#### ✅ Advantages
-- Scales naturally — great for accessibility and responsive design.
-- Allows nested scaling (children inherit and multiply parent sizes).
-
-#### ❌ Disadvantages
-- Can “compound” (stack up) if nested, making values unpredictable sometimes.
-
-
-### Comparison Example
-```css
-<div style="font-size: 16px;">
-  <p style="font-size: 1em;">This is 16px</p>
-  <p style="font-size: 2em;">This is 32px</p>
-</div>
-
-<div style="font-size: 20px;">
-  <p style="font-size: 1em;">This is 20px</p>
-  <p style="font-size: 2em;">This is 40px</p>
-</div>
-```
->Notice how the second block’s text becomes bigger — because em depends on the parent’s font size.
-
-### `rem` — Root em
-- rem = root em (relative to the root <html> font size, not the parent).
-- Most browsers default to 16px at the root.
-- Example:
-```css
-html {
-  font-size: 16px;
-}
-h1 {
-  font-size: 2rem; /* = 32px everywhere */
-}
-```
->More predictable than em, because it doesn’t multiply in nested elements.
-
+| **Tag**  | **Name / Purpose**                                          | **Example (Simplified)**                         |
+|----------|-------------------------------------------------------------|--------------------------------------------------|
+| `<ul>`   | **Unordered List** – creates a bulleted list.               | `<ul><li>Apple</li><li>Banana</li></ul>`         |
+| `<ol>`   | **Ordered List** – creates a numbered list.                 | `<ol><li>Step 1</li><li>Step 2</li></ol>`        |
+| `<li>`   | **List Item** – defines an item in `<ul>` or `<ol>`.        | `<li>Item</li>`                                  |
+| `<dl>`   | **Description List** – defines terms and descriptions.      | `<dl><dt>HTML</dt><dd>Markup language</dd></dl>` |
+| `<dt>`   | **Definition Term** – specifies the term in `<dl>`.         | `<dt>CSS</dt>`                                   |
+| `<dd>`   | **Definition Description** – describes the term in `<dt>`.  | `<dd>Style sheet language</dd>`                  |
+| `<menu>` | **Menu List** – defines a list of commands or menu options. | `<menu><li>Save</li><li>Exit</li></menu>`        |
 
 ## References:
-1. https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements
-2. https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style
-2. https://www.w3schools.com/html/html_headings.asp
-3. https://www.w3schools.com/html/html_styles.asp
+
+1. https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists
+2. https://www.w3schools.com/html/html_lists.asp
+
+## Try this:
+
+| **Symbol / Part**   | **Meaning**             | **Description / Example**                                                                      |
+|---------------------|-------------------------|------------------------------------------------------------------------------------------------|
+| `ul`                | Element                 | Creates an unordered list (`<ul>`).                                                            |
+| `>`                 | Child operator          | Nests the next element **inside** the previous one.<br>Example: `ul>li` → `<ul><li></li></ul>` |
+| `li`                | Element                 | Creates a list item (`<li>`).                                                                  |
+| `{ }`               | Text content            | Inserts text inside the element.<br>`li{Item}` → `<li>Item</li>`                               |
+| `$`                 | Numbering placeholder   | Auto-increments with each repetition.<br>`li{Item $}` → `<li>Item 1</li>`, `<li>Item 2</li>`   |
+| `*3`                | Multiplication operator | Repeats the previous element 3 times.                                                          |
+| **Full Expression** | `ul>li{Item $}*3`       | Generates: <br>`<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>`                        |
+
+### Example 1: Unordered List
+
+```
+ul>li*3
+```
+
+Output:
+
+```html
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+```
+
+### Example 2: Ordered List
+
+```
+ol>li*5
+```
+
+Output:
+
+```html
+
+<ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+```
+
+### Example 3: With Text and Numbering
+
+```
+ul>li{Item $}*3
+```
+
+Output:
+
+```html
+
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+```
+
+### Example 4: Nested List
+
+```
+ul>li{Main Item $}>ul>li{Sub Item $}*2
+```
+
+Output:
+
+```html
+
+<ul>
+    <li>Main Item 1
+        <ul>
+            <li>Sub Item 1</li>
+            <li>Sub Item 2</li>
+        </ul>
+    </li>
+</ul>
+```
+
+## Edit List
+- CTRL + CMD + G
+
+
