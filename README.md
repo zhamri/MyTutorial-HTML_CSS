@@ -41,5 +41,6 @@ element.
 ## References:
 
 1. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color
+2. https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/named-color
 2. https://www.w3schools.com/css/css_colors.asp
 3. https://colorhunt.co/
