@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class, Pseudo-Class & Attribute Selectors</title>
+    <style>
+        /* ===========================
+           1. CLASS SELECTOR
+           =========================== */
+        .highlight {
+            color: white;
+            background-color: darkblue;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        /* ===========================
+           2. PSEUDO-CLASS SELECTORS
+           =========================== */
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        li:first-child {
+            font-weight: bold;
+            color: darkgreen;
+        }
+
+        li:last-child {
+            color: purple;
+        }
+
+        /* ===========================
+           3. ATTRIBUTE SELECTORS
+           =========================== */
+        input[type="text"] {
+            border: 2px solid green;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        input[type="password"] {
+            border: 2px solid orange;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        a[target="_blank"] {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<h2>1. Class Selector</h2>
+<p class="highlight">This paragraph uses the <strong>.highlight</strong> class.</p>
+<p>This paragraph has no class.</p>
+
+<h2>2. Pseudo-Class Selector</h2>
+<a href="#">Hover over this link</a>
+
+<ul>
+    <li>First item (first-child)</li>
+    <li>Second item</li>
+    <li>Third item (last-child)</li>
+</ul>
+
+<h2>3. Attribute Selector</h2>
+<input type="text" placeholder="Enter name">
+<input type="password" placeholder="Enter password">
+
+<p>
+    <a href="https://www.uum.edu.my" target="_blank">UUM Website (opens new tab)</a> |
+    <a href="https://www.google.com">Google</a>
+</p>
+
+</body>
+</html>

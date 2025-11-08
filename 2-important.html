@@ -1,0 +1,43 @@
+<!--The !important keyword is used to force a CSS property to take the highest priority, overriding all other conflicting rules — even inline styles (unless the inline style also uses !important).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS !important Example</title>
+    <style>
+        /* Regular class selector */
+        .note {
+            color: blue;
+        }
+
+        /* ID selector - normally higher than class */
+        #importantNote {
+            color: green;
+        }
+
+        /* Adding !important overrides both ID and inline styles */
+        .override {
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Example of <code>!important</code></h2>
+
+<p class="note">This text is blue (from class selector).</p>
+
+<p id="importantNote" class="note">This text is green (ID overrides class).</p>
+
+<p id="importantNote" class="note override">
+    This text is red because <code>!important</code> overrides all others.
+</p>
+
+<p style="color: purple;" class="override">
+    Even though this has an inline style (purple), <code>!important</code> makes it red.
+</p>
+
+</body>
+</html>

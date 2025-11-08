@@ -1,0 +1,47 @@
+<!--An ID selector is used to style a specific unique element on a page.-->
+<!--It starts with a hash symbol (#) in CSS and matches the element’s id attribute in HTML.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Selector Example</title>
+    <style>
+        /* ID Selector Example */
+        #mainTitle {
+            color: white;
+            background-color: darkgreen;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        #intro {
+            font-size: 18px;
+            color: navy;
+        }
+
+        #footerNote {
+            text-align: center;
+            color: gray;
+            font-style: italic;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="mainTitle">Welcome to My Website</h1>
+
+<p id="intro">
+    This paragraph is styled using an <strong>ID selector</strong> named <code>intro</code>.
+    Each ID must be unique on the page — meaning you can’t reuse it for another element.
+</p>
+
+<p>This paragraph has no ID, so it uses the default browser style.</p>
+
+<p id="footerNote">This is the footer note styled using <code>#footerNote</code>.</p>
+
+</body>
+</html>

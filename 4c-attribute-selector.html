@@ -1,0 +1,31 @@
+<!--An attribute selector targets elements based on the presence or value of their HTML attributes.-->
+<!--It uses square brackets [ ].-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Selects all input elements with a type attribute */
+        input[type="text"] {
+            border: 2px solid green;
+            padding: 5px;
+        }
+
+        /* Selects links that open in a new tab */
+        a[target="_blank"] {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" placeholder="Enter name">
+<input type="password" placeholder="Enter password">
+
+<p>
+    <a href="https://uum.edu.my" target="_blank">UUM Website</a>
+    <a href="https://google.com">Google</a>
+</p>
+
+</body>
+</html>
